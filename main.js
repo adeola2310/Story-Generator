@@ -1,4 +1,4 @@
- var customname = document.getElementById('.customname');
+     var customname = document.getElementById('.customname');
      var randomize = document.querySelector('.generate story');
      var story = document.querySelector('.story');
      var storyText = "It was 94 farenheit outside, so :insertX: went for a walk. When they got to :insertY:, they stared in horror for a few moments, then :insertZ:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
@@ -10,21 +10,23 @@
      var yItem =  randomValueFromArray(insertY);
      var zItem =  randomValueFromArray(insertZ);
      // make a methodcall of the new story
-     newStory = newStory.replace('.insertX','xItem');
-      newStory = newStory.replace('.insertY','yItem');
+       newStory = newStory.replace('.insertX','xItem');
+       newStory = newStory.replace('.insertY','yItem');
        newStory = newStory.replace('.insertZ','zItem');
+       newStory = newStory.replace('94 farenheit','temperature');
+       newStory = newStory.replace('300 pounds','weight');
 
     function randomValueFromArray(array){
-  return array[Math.floor(Math.random()*array.length)];
-}
+    return array[Math.floor(Math.random()*array.length)];
+    }
 
 randomize.addEventListener('click', result);
 
-function result() {
+  function result() {
 
   if(customname.value !== '') {
     var name = customname.value;
-    newStory = newStory.replace("Adeola", name);
+    newStory = newStory.replace("Bob", name);
 
   }
   if(document.getElementById("uk").checked) {
